@@ -1,0 +1,47 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Recipe.Models
+@model Recipe
+
+<h2>@Html.DisplayFor(model => model.RecipeName) Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>  
+
+<h1>Ingredients:</h1>
+<p>@Html.DisplayFor(model => model.Ingredients)</p>
+
+<h1>Instructions</h1>
+<p>@Html.DisplayFor(model => model.Instructions)</p>
+
+<h1>Rating:</h1>
+<p>@Html.DisplayFor(model => model.Rating)</p>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This Recipe does not have any tags yet!</p>
+}
+else
+{
+  <h4>This Recipe has the following tags:</h4>
+  <ul>
+    @foreach(RecipeTag join in Model.JoinEntities)
+    {
+      <li>Tag: @join.Tag.Title</li>
+      @using (Html.BeginForm("DeleteJoin", "Recipes"))
+      {
+        @Html.Hidden("joinId", @join.RecipeTagId)
+        <input type="submit" value="Delete"/>
+      }
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Recipe", "Edit", new { id = Model.RecipeId })</p>
+<p>@Html.ActionLink("Add a Tag", "AddTag", new { id = Model.RecipeId })</p>
+<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.RecipeId })</p>
+
+
+

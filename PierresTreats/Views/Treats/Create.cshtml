@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Recipe.Models.Recipe;
+
+<h4>Add a new item</h4>
+
+<p>@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.RecipeName)
+  @Html.TextBoxFor(model => model.RecipeName)
+
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+
+  @Html.LabelFor(model => model.Instructions)
+  @Html.TextBoxFor(model => model.Instructions)
+
+  @Html.LabelFor(model => model.Ingredients)
+  @Html.TextBoxFor(model => model.Ingredients)
+
+  @Html.LabelFor(model => model.Rating)
+  @Html.TextBoxFor(model => model.Rating, new { @type = "number" })
+  
+
+  <input type="submit" value="Add new item" class="btn btn-success" />
+}
+<p>@Html.ActionLink("Show all Recipes", "Index")</p>
