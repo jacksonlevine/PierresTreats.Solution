@@ -15,7 +15,7 @@
 
 ## Goals/Objectives
 
-This project shows how to connect an ASP.NET Core MVC project to a MySQL database using [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/).
+This project shows how to use Authentication with Identity, as well as a many-to-many relationship.
 
 ## Description
 
