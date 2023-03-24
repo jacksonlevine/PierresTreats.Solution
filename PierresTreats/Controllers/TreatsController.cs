@@ -54,11 +54,9 @@ namespace PierresTreats.Controllers
       return RedirectToAction("Index");
     }
 
-    public async Task<ActionResult> Details(int id)
+    [AllowAnonymous]
+    public ActionResult Details(int id)
     {
-      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      IdentityUser currentUser = await _userManager.FindByIdAsync(userId);
-
       Treat thisTreat = _db.Treats
           .Include(treat => treat.JoinEntities)
           .ThenInclude(join => join.Flavor)
