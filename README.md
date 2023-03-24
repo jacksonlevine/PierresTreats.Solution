@@ -19,7 +19,7 @@ This project shows how to connect an ASP.NET Core MVC project to a MySQL databas
 
 ## Description
 
-This project uses Identity in an ASP.NET Core MVC project to authenticate users. This project contains a one-to-many relationship between `Tag` and `Recipe` and a one-to-many relationship between `ApplicationUser` and `Recipe`. 
+This project uses Identity in an ASP.NET Core MVC project to authenticate users, and Create, Update and Delete functionality are limited to authenticated users only. There is also a many-to-many relationship between `Flavor` and `Treat`.
 
 ## How To Run This Project
 
