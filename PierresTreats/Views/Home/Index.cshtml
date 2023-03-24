@@ -8,9 +8,6 @@
 
 <hr>
 
-@if (User.Identity.IsAuthenticated)
-{
-
   <h4>Treats</h4>
   @if (Model["recipes"].Length == 0)
   {
@@ -22,12 +19,7 @@
       <li>@Html.ActionLink(@recipe.Name + ": " + @recipe.Description, "Details", "Treats", new { id = @recipe.TreatId})</li>
     }
   </ul>
-}
-else
-{
-  <h4>Treats</h4>
-  <p>Please @Html.ActionLink("log in", "LogIn", "Account") or @Html.ActionLink("register", "Register", "Account") to view or manage your recipes.</p>
-}
+
 
 <hr>
 
