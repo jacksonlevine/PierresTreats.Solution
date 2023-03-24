@@ -4,10 +4,9 @@
 
 @using PierresTreats.Models;
 
-<h1>Welcome to the Treat Box!</h1>
+<h1>Welcome to Pierre's Treats!</h1>
 
 <hr>
-
   <h4>Treats</h4>
   @if (Model["treats"].Length == 0)
   {
@@ -19,8 +18,6 @@
       <li>@Html.ActionLink(@treat.Name + ": " + @treat.Description, "Details", "Treats", new { id = @treat.TreatId})</li>
     }
   </ul>
-
-
 <hr>
 
 <p>@Html.ActionLink("Manage treats", "Index", "Treats")</p> 
