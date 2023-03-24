@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model Recipe.Models.Recipe;
+@model PierresTreats.Models.Treat;
 
 <h2>Edit</h2>
 
@@ -10,22 +10,13 @@
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.RecipeId)
+  @Html.HiddenFor(model => model.TreatId)
 
-  @Html.LabelFor(model => model.RecipeName)
-  @Html.TextBoxFor(model => model.RecipeName)
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
 
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
-
-  @Html.LabelFor(model => model.Instructions)
-  @Html.TextBoxFor(model => model.Instructions)
-
-  @Html.LabelFor(model => model.Ingredients)
-  @Html.TextBoxFor(model => model.Ingredients)
-
-  @Html.LabelFor(model => model.Rating)
-  @Html.TextBoxFor(model => model.Rating, new { @type = "number" })
 
   <input type="submit" value="Save" />
 }

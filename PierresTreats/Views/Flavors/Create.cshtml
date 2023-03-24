@@ -2,14 +2,14 @@
   Layout = "_Layout";
 }
 
-@model Recipe.Models.Tag
+@model PierresTreats.Models.Flavor
 
 <h4>Add a new tag</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Title)
-    @Html.TextBoxFor(model => model.Title)
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
 
     <input type="submit" value="Add new tag" class="btn btn-default" />
 }

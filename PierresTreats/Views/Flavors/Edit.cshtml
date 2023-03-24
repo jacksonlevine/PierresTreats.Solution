@@ -2,18 +2,18 @@
   Layout = "_Layout";
 }
 
-@model Recipe.Models.Tag
+@model PierresTreats.Models.Flavor
 
 <h2>Edit</h2>
 
-<h4>Edit this tag: @Html.DisplayFor(model => model.Title)</h4>
+<h4>Edit this tag: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.TagId)
+    @Html.HiddenFor(model => model.FlavorId)
 
-    @Html.LabelFor(model => model.Title)
-    @Html.EditorFor(model => model.Title)
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
 
     <input type="submit" value="Save" />
 }
