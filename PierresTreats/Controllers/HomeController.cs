@@ -3,8 +3,6 @@ using PierresTreats.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
-using System.Threading.Tasks;
-using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 
 namespace PierresTreats.Controllers
@@ -25,17 +23,11 @@ namespace PierresTreats.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-
       Dictionary<string, object[]> model = new Dictionary<string, object[]>();
-
       Treat[] treats = _db.Treats.ToArray();
-
       model.Add("treats", treats);
-
       Flavor[] flavors = _db.Flavors.ToArray();
-
       model.Add("flavors", flavors);
-
       return View(model);
     }
   }

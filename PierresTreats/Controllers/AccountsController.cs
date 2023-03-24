@@ -11,7 +11,6 @@ namespace PierresTreats.Controllers
     private readonly PierresTreatsContext _db;
     private readonly UserManager<IdentityUser> _userManager;
     private readonly SignInManager<IdentityUser> _signInManager;
-
     public AccountController (UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, PierresTreatsContext db)
     {
       _userManager = userManager;
@@ -23,7 +22,7 @@ namespace PierresTreats.Controllers
     {
       return View();
     }
-
+    
     public IActionResult Register()
     {
       return View();
