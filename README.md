@@ -7,10 +7,15 @@
 ## Technologies Used
 
 * .Net 6 SDK
+
 * C#
+
 * EFCore
+
 * ASP.Net MVC
+
 * Razor
+
 * Identity
 
 ## Goals/Objectives
@@ -32,8 +37,11 @@ dotnet tool install --global dotnet-ef --version 6.0.0
 ### Set Up and Run Project
 
 1. Clone this repo.
+
 2. Open the terminal and navigate to this project's production directory called "PierresTreats".
+
 3. Within the production directory "PierresTreats", create a new file called `appsettings.json`.
+
 4. Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL. For the LearnHowToProgram.com lessons, we always assume the `uid` is `root` and the `pwd` is `epicodus`.
 
 ```json
@@ -46,20 +54,27 @@ dotnet tool install --global dotnet-ef --version 6.0.0
 
 5. Create the database using the migrations in the To Do List project. Open your shell (e.g., Terminal or GitBash) to the production directory "PierresTreats", and run `dotnet ef database update`. 
     - To optionally create a migration, run the command `dotnet ef migrations add MigrationName` where `MigrationName` is your custom name for the migration in UpperCamelCase. To learn more about migrations, visit the LHTP lesson [Code First Development and Migrations](https://www.learnhowtoprogram.com/c-and-net-part-time/many-to-many-relationships/code-first-development-and-migrations).
+
 6. Within the production directory "PierresTreats", run `dotnet watch run` in the command line to start the project in development mode with a watcher.
-4. Open the browser to _https://localhost:5001_. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://www.learnhowtoprogram.com/lessons/redirecting-to-https-and-issuing-a-security-certificate).
+
+7. Open the browser to _https://localhost:5001_. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://www.learnhowtoprogram.com/lessons/redirecting-to-https-and-issuing-a-security-certificate).
 
 ## Database Instructions 
 
 * In your terminal type to create a db migration: $ dotnet ef migrations add Initial
+
 * Updating the Database with the Migration: $ dotnet ef database update
 
 ## DB (Optional)
 
 * If you would like to see a current view of the database: Open SQL workbench.
+
 * Navigate to the "Administration" tab in SQL Workbench.
+
 * Click "Schema" 
+
 * Right hand mouse click "Refresh All".
+
 * The _Name the schema "project_name" of the database in this current project will be in view
 
 ## Known Bugs
@@ -89,4 +104,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 Copyright (c) 2023 Jackson Levine
-
