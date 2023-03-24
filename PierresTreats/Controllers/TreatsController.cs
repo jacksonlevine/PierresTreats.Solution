@@ -68,7 +68,7 @@ namespace PierresTreats.Controllers
       return View(thisTreat);
     }
 
-    public ActionResult AddTag(int id)
+    public ActionResult AddFlavor(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Title");
@@ -76,7 +76,7 @@ namespace PierresTreats.Controllers
     }
 
     [HttpPost]
-    public ActionResult AddTag(Treat treat, int tagId)
+    public ActionResult AddFlavor(Treat treat, int tagId)
     {
 #nullable enable
       TreatFlavor? joinEntity = _db.TreatFlavors.FirstOrDefault(join => (join.FlavorId == tagId && join.TreatId == treat.TreatId));

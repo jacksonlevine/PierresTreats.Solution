@@ -9,20 +9,20 @@
 <hr>
 
   <h4>Treats</h4>
-  @if (Model["recipes"].Length == 0)
+  @if (Model["treats"].Length == 0)
   {
-    <p>No recipes have been added yet!</p>
+    <p>No treats have been added yet!</p>
   }
   <ul>
-    @foreach (Treat recipe in Model["recipes"])
+    @foreach (Treat treat in Model["treats"])
     {
-      <li>@Html.ActionLink(@recipe.Name + ": " + @recipe.Description, "Details", "Treats", new { id = @recipe.TreatId})</li>
+      <li>@Html.ActionLink(@treat.Name + ": " + @treat.Description, "Details", "Treats", new { id = @treat.TreatId})</li>
     }
   </ul>
 
 
 <hr>
 
-<p>@Html.ActionLink("Manage recipes", "Index", "Treats")</p> 
-<p>@Html.ActionLink("Manage tags", "Index", "Flavors")</p>
+<p>@Html.ActionLink("Manage treats", "Index", "Treats")</p> 
+<p>@Html.ActionLink("Manage flavors", "Index", "Flavors")</p>
 <p>@Html.ActionLink("Create or manage an account", "Index", "Account")</p>
